@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+ {% for post in allPosts  %}
+   <div class="card text-center my-5">
+  <div class="card-header">
+    {{post.title}}
+  </div>
+  <div class="card-body">
+  
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">{{post.content | truncatechars:100}}</p>
+<button class = "btn btn-primary" > <a href="/blogPost"> Continue Reading</a></button>
+  </div>
+  <div class="card-footer text-muted">
+    {{post.dateTime}}
+  </div>
+</div>
+{% endfor %}
+{% endblock body %}
